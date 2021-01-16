@@ -56,6 +56,9 @@ wget https://golang.org/dl/go${goversion}.linux-amd64.tar.gz \
     && rm go${goversion}.linux-amd64.tar.gz 
     #&& go get -v github.com/adakailabs/gocard
 
+echo "EDITOR=emacs" >> /etc/environment
+echo alias e="emacs" >> /etc/profile.d/aliases.sh
+
 # Configure chrony (use the Google time server)
 cat > /etc/chrony/chrony.conf << EOM
 server time.google.com prefer iburst minpoll 4 maxpoll 4
